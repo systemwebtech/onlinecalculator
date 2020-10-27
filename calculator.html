@@ -11,7 +11,6 @@ body{margin:55px;}
 form { border:1px solid black;
      width:355px;}
 
-#clear{width:355px;}
 #answer{width:355px;}
 
 input{font-size:2rem;
@@ -23,11 +22,22 @@ color:white;}
 </head>
 
 <body>
-
+ <script>
+   
+     
+     function DEL(){
+     var prevalue = form.answer.value;
+     form.answer.value = prevalue.substr(0,prevalue.length-1); }
+     </script>
 <center>
 <form  name="form">
 
 <input type="text" name="answer" id="answer" /><br/><br/>
+     
+     <input type="button" value="Clr" onclick="form.answer.value = ''" >
+<input type="button" value="AC" onclick="form.answer.value='0'">
+<input type="button" value="DEL" onclick="DEL()"><br/><br/>
+     
 <input type="button" value=" 1 " onclick="form.answer.value += '1' ">
 <input type="button" value=" 2 " onclick="form.answer.value += '2' ">
 <input type="button" value=" 3 " onclick="form.answer.value += '3' "><br/><br/>
@@ -48,7 +58,7 @@ color:white;}
 <input type="button" value=" 0 " onclick="form.answer.value += '0' ">
 <input type="button" value=" = " onclick="form.answer.value = eval(form.answer.value) "><br/><br/>
 
-<input type="button" value="Clear All" onclick="form.answer.value = ''" id="clear">
+
 
 </form>
 </center>
